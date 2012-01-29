@@ -1,0 +1,41 @@
+#!/usr/bin/env ruby
+
+subcommand = ARGV.shift
+if subcommand == "init"
+  require "twitter_command/init"
+  exit 0
+end
+
+
+require "twitter_command/api"
+
+api = TwitterCommand::API.new
+
+
+case subcommand
+when "test"
+  puts api.help_test
+when "followers"
+  api.followers_ids.each { |user_id| 
+    $stdout.puts user_id  
+  }
+when "friends"
+  api.friends_ids.each { |user_id| 
+    $stdout.puts user_id  
+  }
+when "users-lookup"
+  user_ids = $stdin.readlines.map{ |line| line.strip }
+  api.users_lookup(user_ids, { :out => 'screen_name' }).each { |user_data|
+    $stdout.puts user_data
+  }
+when "following"
+  following_ids = api.followers_id - api.friends_ids 
+  following_ids.each { |ids|
+    $stdout.puts ids
+  }
+else
+  require "twitter_command/help"
+  exit 1
+end
+
+exit 0
