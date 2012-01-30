@@ -6,9 +6,11 @@ usage:
 
 commands:
 
-  init: get access token
-  test: check twitter api alive
-  followers: get your followers' user_id
-  friends: get  your friends' user_id
-  users-lookup: get user's infomations
+  init: get access token.
+  test: check twitter api alive.
+  followers: print user_ids for users following you.
+  friends: print user_ids that you follow.
+  users-lookup: convert user_id to screen_name.
+  no-retweet: print user_ids that you don't want to see retweets from.
+
 EOS

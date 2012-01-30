@@ -13,4 +13,5 @@ require "twitter_command/api/followers_ids"
 require "twitter_command/api/friends_ids"
 require "twitter_command/api/help_test"
 require "twitter_command/api/users_lookup"
+require "twitter_command/api/friendships_no_retweet_ids"
 
