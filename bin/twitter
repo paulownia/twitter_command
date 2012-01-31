@@ -37,6 +37,10 @@ when "no-retweet"
   api.friendships_no_retweet_ids.each { |user_id|
     $stdout.puts user_id
   }
+when "blocking" 
+  api.blocks_blocking_ids.each { |user_id| 
+    $stdout.puts user_id
+  }
 else
   require "twitter_command/help"
   exit 1
