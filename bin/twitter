@@ -29,7 +29,7 @@ when "users-lookup"
     $stdout.puts user_data
   }
 when "following"
-  following_ids = api.followers.ids - api.friends.ids 
+  following_ids = api.friends.ids - api.followers.ids 
   following_ids.each { |ids|
     $stdout.puts ids
   }

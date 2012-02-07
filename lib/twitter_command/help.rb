@@ -13,5 +13,6 @@ commands:
   users-lookup: convert user_id to screen_name.
   no-retweet: print user_ids that you don't want to see retweets from.
   blocking: print user_ids that you are blocking.
+  following: print ids for every user you follow who don't follow you back.
 
 EOS
