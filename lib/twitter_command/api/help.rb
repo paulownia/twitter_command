@@ -1,6 +1,8 @@
 class TwitterCommand::API
-  def help_test
+class Help < Base
+  def test
     @client.get("/help/test")
   end
+end
 end
 

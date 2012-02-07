@@ -1,5 +1,7 @@
 class TwitterCommand::API
-  def blocks_blocking_ids
+class Blocks < Base
+  def blocking_ids
     @client.get("/blocks/blocking_ids") 
   end
+end
 end

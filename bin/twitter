@@ -14,31 +14,31 @@ api = TwitterCommand::API.new
 
 case subcommand
 when "test"
-  puts api.help_test
+  puts api.help.test
 when "followers"
-  api.followers_ids.each { |user_id| 
+  api.followers.ids.each { |user_id| 
     $stdout.puts user_id  
   }
 when "friends"
-  api.friends_ids.each { |user_id| 
+  api.friends.ids.each { |user_id| 
     $stdout.puts user_id  
   }
 when "users-lookup"
   user_ids = $stdin.readlines.map{ |line| line.strip }
-  api.users_lookup(user_ids, { :out => 'screen_name' }).each { |user_data|
+  api.users.lookup(user_ids, { :out => 'screen_name' }).each { |user_data|
     $stdout.puts user_data
   }
 when "following"
-  following_ids = api.followers_ids - api.friends_ids 
+  following_ids = api.followers.ids - api.friends.ids 
   following_ids.each { |ids|
     $stdout.puts ids
   }
 when "no-retweet"
-  api.friendships_no_retweet_ids.each { |user_id|
+  api.friendships.no_retweet_ids.each { |user_id|
     $stdout.puts user_id
   }
 when "blocking" 
-  api.blocks_blocking_ids.each { |user_id| 
+  api.blocks.blocking_ids.each { |user_id| 
     $stdout.puts user_id
   }
 else

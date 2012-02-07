@@ -1,5 +1,6 @@
 class TwitterCommand::API
-  def users_lookup(ids, config = {})
+class Users < Base
+  def lookup(ids, config = {})
     if ids.size == 0
       return []
     end
@@ -13,5 +14,6 @@ class TwitterCommand::API
       end
     end
     result
-  end 
+  end
+end
 end
