@@ -24,6 +24,7 @@ when "friends"
     $stdout.puts user_id  
   }
 when "users-lookup"
+when "screen-name"
   user_ids = $stdin.readlines.map{ |line| line.strip }
   api.users.lookup(user_ids, { :out => 'screen_name' }).each { |user_data|
     $stdout.puts user_data
