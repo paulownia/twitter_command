@@ -49,7 +49,7 @@ module TwitterCommand
       end
     end
 
-    BaseURL = "https://api.twitter.com/1"
+    BaseURL = "https://api.twitter.com/1.1"
 
     def get(api, options = {})
       query = options.map { |k, v|
@@ -72,7 +72,7 @@ module TwitterCommand
       json = nil 
       begin
         json = JSON.parse(res.body)  
-      rescue JSON::ParserError => e
+      rescue JSON::ParserError
         data = res.body
         json = JSON.parse("[#{data}]").first
       end
