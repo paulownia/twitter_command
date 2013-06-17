@@ -7,7 +7,6 @@ usage:
 commands:
 
   init: get access token.
-  test: check twitter api alive.
   followers: print user_ids for users following you.
   friends: print user_ids that you follow.
   screen-name: convert user_id to screen_name.

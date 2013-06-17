@@ -1,16 +1,19 @@
 #!/usr/bin/env ruby
 
 subcommand = ARGV.shift
-if subcommand == "init"
+
+case subcommand
+when "init"
   require "twitter_command/init"
+  exit 0
+when "help"
+  require "twitter_command/help"
   exit 0
 end
 
 
 require "twitter_command/api"
-
 api = TwitterCommand::API.new
-
 
 case subcommand
 when "test"
